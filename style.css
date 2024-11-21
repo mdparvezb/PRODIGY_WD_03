@@ -118,8 +118,8 @@ body {
 }
 
 /* For Small Size Display */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   #msg {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
