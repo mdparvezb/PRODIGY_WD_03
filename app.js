@@ -23,12 +23,12 @@ boxes.forEach((box) => {
     if (turnx) {
       box.innerHTML = "X";
       box.disabled = true;
-      turn.innerHTML = "Turn: O";
+      turn.innerHTML = "Turn: 'O'";
       turnx = false;
     } else {
       box.innerHTML = "O";
       box.disabled = true;
-      turn.innerHTML = "Turn: X";
+      turn.innerHTML = "Turn: 'X'";
       turnx = true;
     }
 
@@ -66,7 +66,7 @@ const resetBtn = () => {
   for (box of boxes) {
     box.innerHTML = "";
     box.disabled = false;
-    turn.innerHTML = "Turn: X";
+    turn.innerHTML = "Turn: 'X'";
     turnx = true;
   }
 

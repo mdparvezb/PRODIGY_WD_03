@@ -116,3 +116,10 @@ body {
 .hide {
   display: none;
 }
+
+/* For Small Size Display */
+@media screen and (max-width: 500px) {
+  #msg {
+    font-size: 20px;
+  }
+}
