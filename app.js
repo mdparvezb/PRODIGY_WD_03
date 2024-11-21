@@ -4,7 +4,7 @@ const msgContainer = document.querySelector(".msg-container");
 const msg = document.querySelector("#msg");
 const newBtn = document.querySelector("#new-btn");
 const turn = document.querySelector(".turn");
-let turnx = true;
+let turnx = true; // Turnx True = X Turn
 // Winning Pattern
 const winPatterns = [
   [0, 1, 2],
@@ -23,19 +23,20 @@ boxes.forEach((box) => {
     if (turnx) {
       box.innerHTML = "X";
       box.disabled = true;
-      turn.innerHTML = "TURN:  O";
+      turn.innerHTML = "Turn: O";
       turnx = false;
     } else {
       box.innerHTML = "O";
       box.disabled = true;
-      turn.innerHTML = "TURN:  X";
+      turn.innerHTML = "Turn: X";
       turnx = true;
     }
 
     winner();
   });
 });
-// Wiiner Display
+
+// Winner Display
 const showWinner = (winner) => {
   msg.innerHTML = `Congratulations, Winner is ${winner}`;
   msgContainer.classList.remove("hide");
@@ -45,6 +46,7 @@ const showWinner = (winner) => {
     box.disabled = true;
   }
 };
+
 // Winner Checker
 const winner = () => {
   for (let pattern of winPatterns) {
@@ -58,11 +60,14 @@ const winner = () => {
     }
   }
 };
+
 // Reset Button Logic
 const resetBtn = () => {
   for (box of boxes) {
     box.innerHTML = "";
     box.disabled = false;
+    turn.innerHTML = "Turn: X";
+    turnx = true;
   }
 
   msgContainer.classList.add("hide");
